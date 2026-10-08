@@ -10,7 +10,7 @@
 # 1) Proxy API calls to your hosted backend. EDIT THE URL BELOW.
 [[redirects]]
   from   = "/api/*"
-  to     = "https://YOUR-BACKEND-HOST.example.com/api/:splat"
+  to     = "https://the-mahjong-production.up.railway.app/api/:splat"
   status = 200
   force  = true
 
