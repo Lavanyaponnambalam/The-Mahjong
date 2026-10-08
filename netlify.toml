@@ -1,0 +1,21 @@
+# Frontend on Netlify. The Express + MySQL API must be hosted elsewhere (see README "Deploying").
+[build]
+  base    = "client"
+  command = "npm install && npm run build"
+  publish = "dist"          # relative to base -> client/dist
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# 1) Proxy API calls to your hosted backend. EDIT THE URL BELOW.
+[[redirects]]
+  from   = "/api/*"
+  to     = "https://YOUR-BACKEND-HOST.example.com/api/:splat"
+  status = 200
+  force  = true
+
+# 2) Single-page-app routing (/dashboard, /game/12, ...)
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
